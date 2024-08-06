@@ -1,6 +1,6 @@
 # [ulis.es](https://ulis.es)
 SOCIAL MEDIA:
-<a href="https://github.com/ulisesdeveloper" target="_blank">GITHUB</a> // <a href="https://reddit.com/user/ulisesdeveloper" target="_blank">REDDIT</a> <img src=”imgs/logos/reddit-color.svg” onclick=”window.open(“https://reddit.com/user/ulisesdeveloper”)’>
+<a href="https://github.com/ulisesdeveloper" target="_blank">GITHUB</a> // <a href="https://reddit.com/user/ulisesdeveloper" target="_blank">REDDIT</a> <img src=”imgs/logos/reddit-color.svg” width="75" height="75" onclick=”window.open(“https://reddit.com/user/ulisesdeveloper”)’>
 
 CERTIFICATIONS:
 
