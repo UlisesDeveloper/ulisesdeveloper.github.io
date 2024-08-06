@@ -4,7 +4,7 @@ SOCIAL MEDIA:
 
 CERTIFICATIONS:
 
-<img src="/imgs/cert/OCI23AIFCA.jpg" width="100" height="100"> <img src="imgs/cert/OCI2024GAIOCP.jpg" width="100" height="100">
+<img src="/imgs/cert/OCI23AIFCA.jpg" width="150" height="150"> <img src="imgs/cert/OCI2024GAIOCP.jpg" width="150" height="150">
 
 
 If you wish to contact me, please do so at: <a href="ulisesgdev@gmail.com" target="_blank">ulisesgdev@gmail.com</a>
