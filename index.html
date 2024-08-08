@@ -19,7 +19,7 @@
             width: 80%;
             margin: auto;
             overflow: hidden;
-            flex: 1; /* This makes the container take up the remaining space */
+            flex: 1;
         }
         header {
             background: #333;
@@ -27,11 +27,19 @@
             padding-top: 30px;
             min-height: 70px;
             border-bottom: #fc4e03 3px solid;
+            position: relative; /* Add relative positioning */
         }
         header h1 {
             text-align: center;
             text-transform: uppercase;
             margin: 0;
+        }
+        .flag {
+            position: absolute; /* Position the flag */
+            top: 32px;
+            right: 40px;
+            font-size: 30px; /* Adjust the size */
+            text-decoration: none; /* Remove underline */
         }
         .main {
             padding: 20px;
@@ -66,6 +74,7 @@
 <body>
     <header>
         <h1>Ulises Romero López</h1>
+        <a href="https://ulis.es/es/" class="flag">🇪🇸</a>
     </header>
     <div class="container">
         <div class="main">
@@ -82,6 +91,7 @@
             <ul>
                 <a href="https://github.com/ulisesdeveloper" target="_blank">GITHUB</a> 
                 <a href="https://reddit.com/user/ulisesdeveloper" target="_blank">REDDIT</a>
+                <a href="https://stackoverflow.com/users/22490596/ulisesdev?tab=summary" target="_blank">STACK OVERFLOW</a>
             </ul>
         </div>
     </div>
