@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Time Tracker for Windows</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            flex: 1;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #fc4e03 3px solid;
+            position: relative;
+        }
+        header h1 {
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        .flag {
+            position: absolute;
+            top: 32px;
+            right: 40px;
+            font-size: 30px;
+            text-decoration: none;
+        }
+        .main {
+            padding: 20px;
+            background: #fff;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        .section-title {
+            background: #fc4e03;
+            color: #fff;
+            padding: 5px;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+        .article {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 280px;
+            gap: 24px;
+            align-items: start;
+        }
+        .article-image {
+            width: 100%;
+            margin: 0 0 16px 0;
+            border: 1px solid #ddd;
+            background: #fff;
+            padding: 6px;
+            box-sizing: border-box;
+        }
+        .article-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .project-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 8px 0 14px 0;
+        }
+        .project-button {
+    display: block;
+    flex: 1 1 0;
+    padding: 10px 14px;
+    background: #fc4e03;
+    color: #fff;
+    border: 1px solid #d94400;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+    box-sizing: border-box; /* Add this line */
+}
+        .project-button.download {
+            flex: 0 0 100%;
+        }
+        .project-button:hover {
+            background: #e64500;
+            color: #fff;
+        }
+        .article-content {
+            font-size: 16px;
+        }
+        .article-content p {
+            margin-top: 0;
+        }
+        .article-sidebar {
+            display: flex;
+            flex-direction: column;
+        }
+        .features {
+            border: 2px solid #fc4e03;
+            padding: 14px 16px;
+            background: #fff8f3;
+            margin-top: 18px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .features h3 {
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            font-size: 16px;
+            letter-spacing: 0.04em;
+        }
+        .features ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .features li {
+            margin: 8px 0;
+        }
+        .feature {
+            margin-bottom: 16px;
+        }
+        .feature:last-child {
+            margin-bottom: 0;
+        }
+        .feature h4 {
+            margin: 0 0 6px 0;
+            font-size: 15px;
+        }
+        .feature p {
+            margin: 0;
+        }
+        .feature-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+            align-items: flex-start;
+        }
+        .feature img {
+            display: block;
+            width: 100%;
+            border: 1px solid #ddd;
+            background: #fff;
+            padding: 4px;
+            box-sizing: border-box;
+        }
+        .feature-shot {
+            max-width: 520px;
+        }
+        .feature-row .feature-shot {
+            flex: 1 1 320px;
+            min-width: 320px;
+            max-width: none;
+        }
+        .feature-row .feature-shot--window {
+            flex: 1 1 340px;
+            min-width: 320px;
+            max-width: none;
+        }
+        .feature-row .feature-shot--cs2 {
+            flex: 1 1 380px;
+            min-width: 320px;
+            max-width: none;
+        }
+        .meta {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        a {
+            color: #fc4e03;
+            text-decoration: none;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+        } .tested-with {
+            margin-top: 32px;
+            padding: 0 4px;
+        }
+        
+        .tested-with .highlight {
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .tested-with ul {
+            margin-top: 12px;
+            padding-left: 20px;
+        }
+        
+        .tested-with li {
+            margin-bottom: 8px;
+            color: #333;
+        }
+        @media (max-width: 700px) {
+            .container {
+                width: 92%;
+            }
+            .article {
+                display: block;
+            }
+            .article-sidebar {
+                margin-top: 18px;
+            }
+            .feature-row .feature-shot {
+                min-width: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ulises Romero López</h1>
+        <a href="https://ulis.es/es/ProgramTimeTracker" class="flag">🇪🇸</a>
+    </header>
+    <div class="container">
+        <a href="https://ulis.es/es/ProgramTimeTracker" class="flag">🇪🇸</a>
+        <div class="main">
+            <div class="section-title">Program Time Tracker</div>
+            <div class="article">
+                <div class="article-content">
+                    <p class="meta">Windows desktop app built with C++, Win32 API & Dear ImGui</p>
+                    <h2>Program Time Tracker for Windows</h2>
+                    <p>
+                        Program Time Tracker is a Windows Program, built with C++, Win32 API & Dear ImGui, designed to track your program usage & view usage data across timespans (day, week, month...).
+                        
+                    </p>
+                    <p>
+                        It includes a AntiProcrastination mode which allows you to set daily limits for distracting programs, with weekend exceptions if desired. To enforce the daily limits there's a snooze notification option and a Kill after first snooze option to enforce the daily limit.
+                        <br>
+                        It also has an automatic tracking stopper after a selectable minute limit of inactivity.
+                    </p>
+                     <p>
+                        I made this project to test my skills after my first year of my bachelor's degree and to keep myself busy during the summer, hence the abuse of manual dynamic arrays instead of using smart vectors, even though I eventually bit the bullet for the data viewing aspect to avoid losing my mind.
+                        
+                    </p>
+                </div>
+                <div class="article-sidebar">
+                    <div class="article-image">
+                        <img src="../imgs/projects/programTimeTracker/programTimeTrackerBanner.png" alt="Program Time Tracker for Windows">
+                    </div>
+                    <div class="project-buttons">
+                        <a class="project-button" href="https://codeberg.org/UlisesDev/ProgramTimeTracker" target="_blank" rel="noopener noreferrer">Codeberg</a>
+                        <a class="project-button" href="https://github.com/UlisesDeveloper/ProgramTimeTracker" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a class="project-button download" href="https://github.com/UlisesDeveloper/ProgramTimeTracker/archive/refs/heads/main.zip">Download</a>
+                    </div>
+                    <p><a href="../index.html">Back to portfolio</a></p>
+                </div>
+            </div>
+            <div class="features">
+                <h3>Features</h3>
+                <div class="feature">
+                    <h4>Detailed graphs</h4>
+                    <p>Get detailed program usage info across the week, month, year... with detailed graphs.</p>
+                    <img class="feature-shot" src="../imgs/projects/programTimeTracker/weekChart.png" alt="Week chart screenshot">
+                </div>
+                <div class="feature">
+                    <h4>AntiProcrastination mode with weekend exceptions</h4>
+                    <p>Includes AntiProcrastination mode to allow you to focus on getting your work done, with weekend exceptions.</p>
+                    <div class="feature-row">
+                        <img class="feature-shot feature-shot--window" src="../imgs/projects/programTimeTracker/antiProcrastinationWindow.png" alt="AntiProcrastination window">
+                        <img class="feature-shot feature-shot--cs2" src="../imgs/projects/programTimeTracker/antiProcrastinationCS2Entry.png" alt="AntiProcrastination CS2 entry">
+                    </div>
+                </div>
+                <div class="feature">
+                    <h4>System tray</h4>
+                    <p>Runs minimized in the system tray and uses barely any resources.</p>
+                    <img class="feature-shot" src="../imgs/projects/programTimeTracker/systemResources.png" alt="System resources screenshot">
+                </div>
+            </div>
+
+            
+            <div class="tested-with">
+                <span class="highlight">Tested with:</span>
+                <ul>
+                    <li>x64, AuthenticAMD AMD Ryzen 7 7840HS w/ Radeon 780M Graphics, 32GB RAM 5600MT/S, NVIDIA GeForce RTX 4060 Laptop GPU, Windows 11</li>
+                    <li>x64, GenuineIntel Intel Core i7-10700F, 16GB RAM 3200MT/S, NVIDIA GeForce RTX 3060 TI GPU, Windows 11 </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Ulises Romero López | © 2026</p>
+    </footer>
+</body>
+</html>
